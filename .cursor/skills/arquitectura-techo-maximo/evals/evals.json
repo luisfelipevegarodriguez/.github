@@ -1,0 +1,23 @@
+{
+  "skill_name": "arquitectura-techo-maximo",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Resume la arquitectura de este repositorio y eleva al techo máximo.",
+      "expected_output": "Documento con las 6 secciones obligatorias: resumen ejecutivo, arquitectura actual, techo máximo con checklist, gaps priorizados, plan por fases y 3 primeros movimientos. Debe basarse en hechos del repo y declarar supuestos si faltan.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Solo resume la arquitectura actual; no quiero un rewrite.",
+      "expected_output": "Modo compacto: secciones 1–2, techo máximo breve (sección 3 corta) y 3 movimientos de bajo riesgo (sección 6). Debe omitir gaps priorizados y el plan por fases; sin proponer reescritura total.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Tenemos un monolito Node + Postgres con jobs en cron. Eleva la arquitectura al techo máximo sin microservicios.",
+      "expected_output": "Techo máximo como monolito modular (no microservicios), con boundaries, colas/outbox si aplica, observabilidad y plan incremental. Debe rechazar explícitamente microservicios innecesarios.",
+      "files": []
+    }
+  ]
+}
