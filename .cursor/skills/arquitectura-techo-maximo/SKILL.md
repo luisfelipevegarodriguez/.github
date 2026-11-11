@@ -63,7 +63,45 @@ exige. El techo máximo puede ser un monolito modular bien cortado.
 Compara actual vs techo máximo, prioriza gaps por riesgo × valor, y propone una
 secuencia incremental (no un big-bang).
 
-## Formato de salida (obligatorio)
+## Modo de salida
+
+Elige el formato según la petición:
+
+| Petición del usuario | Modo | Secciones |
+| --- | --- | --- |
+| Solo resumir / architecture summary / “no quiero un rewrite” | **Compacto** | 1, 2, 3 breve, 6 |
+| Elevar / techo máximo / auditar / mejorar diseño / sin matiz | **Completo** | 1–6 |
+
+Si solo pide “elevar”, igual empieza con un resumen corto (secciones 1–2) y
+sigue con el resto.
+
+### Formato compacto (solo resumir)
+
+Omite gaps priorizados y el plan por fases. Mantén el techo máximo corto y
+tres movimientos de **bajo riesgo**.
+
+```markdown
+# Arquitectura: resumen
+
+## 1. Resumen ejecutivo
+- Qué es el sistema (1–3 frases)
+- Nivel de madurez arquitectónica (bajo / medio / alto) y por qué
+- Veredicto en una frase
+
+## 2. Arquitectura actual
+### Vista de contexto
+### Componentes y responsabilidades
+### Flujos críticos
+### Decisiones y trade-offs visibles
+
+## 3. Techo máximo (breve)
+- 3–5 principios o criterios objetivo (sin diseño exhaustivo ni checklist larga)
+
+## 6. Primeros 3 movimientos
+- Tres cambios de bajo riesgo y alto apalancamiento (sin plan multi-fase)
+```
+
+### Formato completo (elevar al techo máximo)
 
 Usa exactamente estas secciones:
 
@@ -126,8 +164,8 @@ Los 3 cambios de mayor apalancamiento para empezar YA.
 - Nombra módulos, servicios o rutas reales cuando existan.
 - Distingue hechos observados de supuestos.
 - Si el alcance es enorme, resume por dominios y eleva el dominio más crítico primero.
-- Si el usuario solo pide “resumir”, igual incluye un techo máximo breve (sección 3) y
-  3 movimientos; si solo pide “elevar”, igual empieza con un resumen corto (sección 1–2).
+- Respeta el modo compacto cuando el usuario solo pide resumen: no fuerces gaps
+  ni plan por fases.
 - Responde en el idioma del usuario.
 
 ## Anti-patrones a evitar

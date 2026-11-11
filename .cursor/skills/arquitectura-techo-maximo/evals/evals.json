@@ -10,7 +10,7 @@
     {
       "id": 2,
       "prompt": "Solo resume la arquitectura actual; no quiero un rewrite.",
-      "expected_output": "Resumen claro de arquitectura actual (secciones 1–2) más un techo máximo breve y 3 movimientos de bajo riesgo, sin proponer reescritura total.",
+      "expected_output": "Modo compacto: secciones 1–2, techo máximo breve (sección 3 corta) y 3 movimientos de bajo riesgo (sección 6). Debe omitir gaps priorizados y el plan por fases; sin proponer reescritura total.",
       "files": []
     },
     {
